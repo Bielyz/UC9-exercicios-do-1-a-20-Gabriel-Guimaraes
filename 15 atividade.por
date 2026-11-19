@@ -1,0 +1,42 @@
+programa {
+inclua biblioteca Matematica
+
+funcao inicio() {
+inteiro opcao
+real soma = 0.0, totalPagar
+
+faca {
+escreva("Cardápio:\n 1 – Lanche R$ 15,00\n 2 – Suco R$ 8,00\n 3 – Sobremesa R$ 10,00\n 0 - Fechar Caixa\nEscolha uma opção: ")
+leia(opcao)
+
+escolha (opcao) {
+caso 1:
+soma = soma + 15
+pare
+caso 2:
+soma = soma + 8
+pare
+caso 3:
+soma = soma + 10
+pare
+caso 0:
+pare
+caso contrario:
+
+escreva("Opção inválida!\n")
+pare
+}
+} enquanto (opcao != 0)
+
+
+totalPagar = soma   // sem desconto, paga o valor normal
+
+    
+se (soma > 50) {      // acima de R$ 50 tem 10% de desconto
+totalPagar = soma * 0.9
+escreva("Você recebeu 10% de desconto!\n")
+}
+
+escreva("Total a pagar: R$ ", Matematica.arredondar(totalPagar, 2))
+}
+}
